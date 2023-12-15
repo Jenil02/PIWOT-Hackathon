@@ -14,7 +14,7 @@ from datetime import date
 textract_client = boto3.client('textract',
     region_name='us-east-1',
     aws_access_key_id="AKIAYUAZFQNZVZGPQQPW",
-    aws_secret_access_key="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"
+    aws_secret_access_key=""
 )
 
 # Utility Functions
@@ -50,7 +50,7 @@ def process_page(page_stream):
     return '\n'.join(extracted_text)
 
 def generate_structure_data_wo_cons(extracted_text):
-    client = openai.OpenAI(api_key='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')
+    client = openai.OpenAI(api_key='')
     
     prompt = """You are a text extractor who extracts relevant patient information in a specified format from a hospital medical bill.
 
@@ -147,7 +147,7 @@ def generate_structure_data_wo_cons(extracted_text):
     return python_code
 
 def generate_structure_data_cons(extracted_text):
-    client = openai.OpenAI(api_key='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')
+    client = openai.OpenAI(api_key='')
     
     prompt = """You are a text extractor who extracts relevant patient information in a specified format from a hospital medical bill.
 
